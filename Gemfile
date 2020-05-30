@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-gem 'nokogiri', '1.9.1'
+gem 'nokogiri', '~> 1.9.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use postgresql as the database for Active Record
@@ -29,9 +29,18 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+
+gem 'devise'
+gem 'cancancan'
+gem 'materialize-sass', '~> 0.98.2'
+gem 'material_icons'
+gem 'redis', '~> 3.0.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.5'
+  gem 'byebug', platform: :mri
 end
 
 group :development do
@@ -49,6 +58,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem "factory_girl_rails"
+  gem "ffaker"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
