@@ -5,7 +5,7 @@ RSpec.describe TeamsController, type: :controller do
 
   before(:each) do
     @request.env["devise.mapping"] = Devise.mappings[:user]
-    @current_user = FactoryGirl.create(:user)
+    @current_user = create(:user)
     sign_in @current_user
   end
 
