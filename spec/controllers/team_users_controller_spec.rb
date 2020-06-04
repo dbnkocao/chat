@@ -11,7 +11,7 @@ RSpec.describe TeamUsersController, type: :controller do
     sign_in @current_user
   end
 
-  describe "GET #crete" do
+  describe "GET #create" do
     context "Team owner" do
       before(:each) do
         @team = create(:team, user: @current_user)

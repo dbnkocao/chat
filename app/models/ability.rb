@@ -12,6 +12,18 @@ class Ability
         user
       end
       can :destroy, Team, user_id: user.id
+
+      # can :read, TeamUser do |tu|
+      #   tu.user == user
+      # end
+      
+      can :create, TeamUser do |tu|
+        tu.team.user == user
+      end
+
+      can :destroy, TeamUser do |tu|
+        tu.team.user == user
+      end
     end
   end
 end
