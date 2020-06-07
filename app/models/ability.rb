@@ -24,6 +24,21 @@ class Ability
       can :destroy, TeamUser do |tu|
         tu.team.user == user
       end
+
+      can :read, Channel do |c|
+        user.teams.include?(c.team) ||
+        c.team.users.include?(user)
+      end
+
+      can :create, Channel do |c|
+        user.teams.include?(c.team) ||
+        c.team.users.include?(user)
+      end
+
+      can :destroy, Channel do |c|
+        c.team.user == user ||
+        c.user == user
+      end
     end
   end
 end
