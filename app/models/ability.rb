@@ -39,6 +39,11 @@ class Ability
         c.team.user == user ||
         c.user == user
       end
+
+      can :read, Talk do |talk|
+        talk.user_one_id == user.id ||
+        talk.user_two_id == user.id
+      end
     end
   end
 end

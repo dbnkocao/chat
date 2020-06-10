@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   delete "/team_user/:id/:team_id", to: "team_users#destroy"
   
   resources :channels, only: [:create, :show, :destroy]
+  # resources :talks, only: [:show]
+  get "talks/:id/:team_id", to: "talks#show", as: :talk
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

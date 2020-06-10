@@ -26,7 +26,7 @@ RSpec.describe TalksController, type: :controller do
         @message2 = build(:message)
         @talk.messages << [@message1, @message2]
 
-        get :show, params: {id: @guest_user, team_id: @team.id}
+        get :show, params: {id: @guest_user.id, team_id: @team.id}
       end
 
       it "returns http success" do
