@@ -28,14 +28,12 @@ class TeamUsersController < ApplicationController
 
     respond_to do |format|
       if @team_user.save
-        format.html { redirect_to @team_user, notice: 'Team user was successfully created.' }
         format.json { render :show, status: :created, location: @team_user }
       else
-        format.html { render :new }
         format.json { render json: @team_user.errors, status: :unprocessable_entity }
       end
     end
-    authorize! :create, @team_user 
+    authorize! :create, @team_user
   end
 
   # PATCH/PUT /team_users/1
@@ -43,7 +41,7 @@ class TeamUsersController < ApplicationController
   def update
     respond_to do |format|
       if @team_user.update(team_user_params)
-        format.html { redirect_to @team_user, notice: 'Team user was successfully updated.' }
+        format.html { redirect_to @team_user, notice: "Team user was successfully updated." }
         format.json { render :show, status: :ok, location: @team_user }
       else
         format.html { render :edit }
@@ -59,20 +57,22 @@ class TeamUsersController < ApplicationController
 
     @team_user.destroy
     respond_to do |format|
-      format.html { redirect_to team_users_url, notice: 'Team user was successfully destroyed.' }
+      format.html { redirect_to team_users_url, notice: "Team user was successfully destroyed." }
       format.json { head :no_content }
     end
-    authorize! :destroy, @team_user 
+    authorize! :destroy, @team_user
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_team_user
-      @team_user = TeamUser.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def team_user_params
-      params.require(:team_user).permit(:user_id, :team_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_team_user
+    @team_user = TeamUser.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def team_user_params
+    user = User.find_by(email: params[:team_user][:email])
+    params.require(:team_user).permit(:team_id).merge(user_id: user.id)
+  end
 end
