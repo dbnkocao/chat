@@ -31,8 +31,8 @@ gem "bootsnap", ">= 1.4.2", require: false
 
 gem "devise"
 gem "cancancan"
-gem "materialize-sass", "~> 0.98.2"
-gem "material_icons"
+# gem "materialize-sass", "~> 0.98.2"
+# gem "material_icons"
 gem "redis", "~> 3.0.0"
 
 group :development, :test do

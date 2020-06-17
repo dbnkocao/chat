@@ -10,6 +10,10 @@ class Team < ApplicationRecord
   before_save :general_channel
 
   def general_channel
-    self.channels << Channel.create(slug: 'general', user_id: self.user.id)
+    self.channels << Channel.create(slug: "general", user_id: self.user.id)
+  end
+
+  def my_users
+    self.users + [self.user]
   end
 end
