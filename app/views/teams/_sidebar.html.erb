@@ -3,9 +3,9 @@
       <div>
          <span class="team_title"><%= @team.slug %></span>
          <% if can? :destroy, @team %>
-         <a class="right team_icon remove_team" href="#">
-         <i class="material-icons" id="<%= @team.id %>">settings</i>
-         </a>
+            <button class="right team_icon remove_team" onclick="open_modal('remove_team_modal')">
+               <i class="material-icons" id="<%= @team.id %>">settings</i>
+            </button>
          <% end %>
       </div>
    </li>

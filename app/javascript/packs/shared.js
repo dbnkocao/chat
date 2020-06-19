@@ -1,12 +1,11 @@
-document.addEventListener('load', function () {
-    var options = {}
+document.addEventListener('turbolinks:load', () => {
     var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
-});
-// modals = document.getElementsByClassName('.modal')
+    var instances = M.Modal.init(elems, {});
+})
 
-// console.log(modals)
-// forEach
-// modals.forEach(element => {
-//     console.log('loop modal')
-// });
+open_modal = (id_modal) => {
+    elem = document.getElementById(id_modal);
+    var instance = M.Modal.getInstance(elem);
+    instance.open();
+    return false;
+}
