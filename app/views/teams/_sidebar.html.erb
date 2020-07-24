@@ -1,4 +1,4 @@
-<ul class="side-nav fixed side-nav-channel" id="side-bar-channel">
+<ul class="side-nav side-nav-channel" id="side-bar-channel">
    <li>
       <div>
          <span class="team_title"><%= @team.slug %></span>
@@ -14,7 +14,7 @@
    </li>
    <li class="">
       <!-- <span class="channel_title">Channels</span> -->
-      <ul class="collapsible" data-collapsible="accordion">
+      <ul class="collapsible sidebar" data-collapsible="accordion">
          <li>
             <div class="collapsible-header"><i class="material-icons">list</i>Channels</div>
             <div class="collapsible-body list">
@@ -95,7 +95,7 @@
 </ul>
 
 <div class="fixed-action-btn horizontal hide-on-med-and-up">
-  <a href="#" data-activates="side-bar-channel" class="button-collapse btn-floating btn-large waves-effect waves-light grey bottom">
+  <a href="#" onclick="toggleSidebar()" class="button-collapse btn-floating btn-large waves-effect waves-light grey bottom">
       <i class="material-icons">menu</i>
   </a>
 </div>
