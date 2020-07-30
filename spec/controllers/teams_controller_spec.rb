@@ -65,7 +65,7 @@ RSpec.describe TeamsController, type: :controller do
 
     it "Redirect to new team" do
       expect(response).to have_http_status(302)
-      expect(response).to redirect_to("/team/#{@team_attributes[:slug]}")
+      expect(response).to redirect_to("/teams/#{@team_attributes[:slug]}")
     end
 
     it "Create team with right attributes" do

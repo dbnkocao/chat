@@ -30,13 +30,13 @@ class ChannelsController < ApplicationController
 
     respond_to do |format|
       if @channel.save
-        format.json { render :show, status: :created, location: @channel }
+        format.html { redirect_to "/teams/#{@channel.team.slug}", notice: "Team was successfully created." }
       else
-        format.json { render json: @channel.errors, status: :unprocessable_entity }
+        format.html { render json: @channel.errors, status: :unprocessable_entity }
       end
     end
 
-    authorize! :create, @channel 
+    authorize! :create, @channel
   end
 
   # PATCH/PUT /channels/1
@@ -44,7 +44,7 @@ class ChannelsController < ApplicationController
   def update
     respond_to do |format|
       if @channel.update(channel_params)
-        format.html { redirect_to @channel, notice: 'Channel was successfully updated.' }
+        format.html { redirect_to @channel, notice: "Channel was successfully updated." }
         format.json { render :show, status: :ok, location: @channel }
       else
         format.html { render :edit }
@@ -58,20 +58,21 @@ class ChannelsController < ApplicationController
   def destroy
     @channel.destroy
     respond_to do |format|
-      format.html { redirect_to channels_url, notice: 'Channel was successfully destroyed.' }
+      format.html { redirect_to "/teams/#{@channel.team.slug}", notice: "Team was successfully deleted." }
       format.json { head :no_content }
     end
     authorize! :destroy, @channel
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_channel
-      @channel = Channel.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def channel_params
-      params.require(:channel).permit(:slug, :user_id, :team_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_channel
+    @channel = Channel.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def channel_params
+    params.require(:channel).permit(:slug, :user_id, :team_id)
+  end
 end

@@ -7,6 +7,12 @@
     height: 100%;
     overflow-x: hidden;
     margin-top: 0;
+
+    .collapsible-body .list {
+        text-align: center;
+        vertical-align: middle;
+    }
+
     .team_title {
         font-size: 20px;
         font-weight: 700;
@@ -43,6 +49,10 @@
 }
 .team_content {
     padding-left: 220px;
+}
+
+.channel_line * {
+    vertical-align: middle;
 }
 @media only screen and (max-width: 992px) {
     .side-nav-channel {
