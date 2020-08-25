@@ -7,21 +7,11 @@ toggleSidebar = () => {
   }
 }
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   channels = document.querySelectorAll('.open_channel');
-//   channels.forEach(channel => {
-//     channel.addEventListener('click', () => {
-//       console.log(channel.dataset.id);
-
-//     });
-//   });
-// });
-
-document.addEventListener('DOMLoadedContent', () => {
-  const channel_id = document.querySelector('ul.channels li:first div a span').getAttribute('id')
-  
+document.addEventListener('DOMContentLoaded', () => {
+  // const channel_id = document.querySelector('ul.channels li:first div a span').getAttribute('id')
+  const channel_id = document.querySelector('ul.channels > li > div > div > a > span').getAttribute('id');
   if (channel_id != undefined)
-    window.open($('ul.channels li:first div a span').attr('id'), 'channels')
+    window.open(channel_id, 'channels')
 })
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   channels.forEach(channel => {
     channel.addEventListener('click', (e) => {
       window.open(e.target.id, 'channels')
+      document.getElementById('message_messagable_type').setAttribute('value', 'Channel')
+      document.getElementById('message_messagable_id').setAttribute('value', e.target.id)
     })
   });
 });

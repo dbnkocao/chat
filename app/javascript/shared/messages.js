@@ -43,7 +43,6 @@ window.open = async (id, type) => {
   // window.change_chat(id, type, team_id)
 
   if (data['messages']) {
-
     data['messages'].forEach((message, index) => {
       window.add_message(message.body, message.date, message.user_name)
     })
