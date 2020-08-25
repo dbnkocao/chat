@@ -9,15 +9,17 @@
       </div>
     </div>
     <div class="row">
-      <form class="col s12">
         <div class="row">
           <div class="input-field col s12">
-            <i class="material-icons prefix">mode_edit</i>
-            <textarea class="materialize-textarea new_message"></textarea>
-            <label for="icon_prefix2">Send a Message...</label>
+            <%= form_with(model: @message, remote: :true) do |message_form| %>
+              <%= message_form.hidden_field :messagable_id, value: @channel.try(:id) %>
+              <%= message_form.hidden_field :messagable_type, value: @channel.try(:class) %>
+              <i class="material-icons prefix">mode_edit</i>
+              <%= message_form.text_area :body, class: "materialize-textarea new_message" %>                
+              <label for="icon_prefix2">Send a Message...</label>
+            <% end %>
           </div>
         </div>
-      </form>
     </div>
   </div>
 </div>

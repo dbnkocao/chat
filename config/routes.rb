@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get "talks/:id/:team_id", to: "talks#show", as: :talk
   root to: "teams#index"
 
+  resources :messages, only: [:create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

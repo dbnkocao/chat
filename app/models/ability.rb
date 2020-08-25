@@ -16,7 +16,7 @@ class Ability
       # can :read, TeamUser do |tu|
       #   tu.user == user
       # end
-      
+
       can :create, TeamUser do |tu|
         tu.team.user == user
       end
@@ -43,6 +43,10 @@ class Ability
       can :read, Talk do |talk|
         talk.user_one_id == user.id ||
         talk.user_two_id == user.id
+      end
+
+      can :create, Message do |message|
+        true
       end
     end
   end

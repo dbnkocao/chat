@@ -1,25 +1,10 @@
 class ChannelsController < ApplicationController
   before_action :set_channel, only: [:show, :edit, :update, :destroy]
 
-  # GET /channels
-  # GET /channels.json
-  def index
-    @channels = Channel.all
-  end
-
   # GET /channels/1
   # GET /channels/1.json
   def show
     authorize! :show, @channel
-  end
-
-  # GET /channels/new
-  def new
-    @channel = Channel.new
-  end
-
-  # GET /channels/1/edit
-  def edit
   end
 
   # POST /channels
@@ -37,20 +22,6 @@ class ChannelsController < ApplicationController
     end
 
     authorize! :create, @channel
-  end
-
-  # PATCH/PUT /channels/1
-  # PATCH/PUT /channels/1.json
-  def update
-    respond_to do |format|
-      if @channel.update(channel_params)
-        format.html { redirect_to @channel, notice: "Channel was successfully updated." }
-        format.json { render :show, status: :ok, location: @channel }
-      else
-        format.html { render :edit }
-        format.json { render json: @channel.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /channels/1

@@ -12,6 +12,8 @@ require('material-icons')
 
 require("../shared/materialize_init")
 require("../teams/show")
+require("../teams/send")
+require("../shared/messages")
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

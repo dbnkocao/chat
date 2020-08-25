@@ -11,8 +11,11 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @message = Message.new
     @team = Team.where(slug: params[:slug]).first
+    @channel = @team.channels.first
     authorize! :show, @team
+    authorize! :create, @message
   end
 
   # POST /teams
