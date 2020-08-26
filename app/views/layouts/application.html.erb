@@ -3,15 +3,12 @@
   <head>
     <title>Chat</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
     <%= javascript_pack_tag "application" %>
   </head>
-
   <body>
     <!-- navbar + sidebar -->
     <header>
-
       <%= render "shared/navbar" %>
       <% if controller.action_name == "show" && controller_name = "teams" %>
         <%= render "teams/sidebar" %>
@@ -19,20 +16,18 @@
         <% # render "shared/sidebar" %>
       <% end %>
     </header>
-
     <main>
       <div class="container">
         <%= yield %>
       </div>
     </main>
-
     <!-- logged partials -->
     <% if current_user %>
       <%= render "teams/add_modal" %>
       <%= render "teams/remove_modal" %>
       <%= render "channels/add_modal" %>
+      <%= render "team_users/add_modal" %>
       <% if false %>
-        <%= render "team_users/add_modal" %>
         <%= render "team_users/remove_modal" %>
         <%= render "channels/remove_modal" %>
       <% end %>

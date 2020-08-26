@@ -1,24 +1,7 @@
 class TeamUsersController < ApplicationController
   before_action :set_team_user, only: [:show, :edit, :update]
 
-  # GET /team_users
-  # GET /team_users.json
-  def index
-    @team_users = TeamUser.all
-  end
-
-  # GET /team_users/1
-  # GET /team_users/1.json
   def show
-  end
-
-  # GET /team_users/new
-  def new
-    @team_user = TeamUser.new
-  end
-
-  # GET /team_users/1/edit
-  def edit
   end
 
   # POST /team_users
@@ -28,26 +11,12 @@ class TeamUsersController < ApplicationController
 
     respond_to do |format|
       if @team_user.save
-        format.json { render :show, status: :created, location: @team_user }
+        format.html { redirect_to "/teams/#{@team_user.team.slug}", notice: "User added successfully." }
       else
-        format.json { render json: @team_user.errors, status: :unprocessable_entity }
+        format.html { render json: @team_user.errors, status: :unprocessable_entity }
       end
     end
     authorize! :create, @team_user
-  end
-
-  # PATCH/PUT /team_users/1
-  # PATCH/PUT /team_users/1.json
-  def update
-    respond_to do |format|
-      if @team_user.update(team_user_params)
-        format.html { redirect_to @team_user, notice: "Team user was successfully updated." }
-        format.json { render :show, status: :ok, location: @team_user }
-      else
-        format.html { render :edit }
-        format.json { render json: @team_user.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /team_users/1

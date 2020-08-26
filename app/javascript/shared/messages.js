@@ -24,8 +24,6 @@ window.add_message = (message, message_date, name) => {
     '</div>'
   
   messages.insertAdjacentHTML('beforeend', messages_text);
-   
-  // $(".messages").animate({ scrollTop: $('.messages').prop("scrollHeight")}, 100);
 
 }
 

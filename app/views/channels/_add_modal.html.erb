@@ -1,16 +1,16 @@
 <div id="add_channel_modal" class="modal">
   <div class="modal-content">
     <div class="row">
-        <%= form_tag(controller: "channels", action: "create", method: "create") do %>
+      <%= form_with(model: Channel.new, local: true) do |c| %>
         <div class="row">
           <div class="col s12">
             <h4>Add a Channel</h4>
           </div>
           <div class="input-field col s12">
-            <%= hidden_field(:channel, :team_id, value: @team.try(:id)) %>
-            <%= text_field(:channel, :slug) %>
+            <%= c.hidden_field(:team_id, value: @team.try(:id)) %>
+            <%= c.text_field(:slug) %>
             <%= label_tag(:email, "Channel Name") %>
-            <%= submit_tag("Add Channel", class: "btn right") %>
+            <%= c.submit("Add Channel", class: "btn right") %>
           </div>
         </div>
       <% end %>

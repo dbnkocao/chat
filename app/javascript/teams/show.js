@@ -8,7 +8,6 @@ toggleSidebar = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // const channel_id = document.querySelector('ul.channels li:first div a span').getAttribute('id')
   const channel_id = document.querySelector('ul.channels > li > div > div > a > span').getAttribute('id');
   if (channel_id != undefined)
     window.open(channel_id, 'channels')
