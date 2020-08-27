@@ -9,11 +9,13 @@
   <body>
     <!-- navbar + sidebar -->
     <header>
-      <%= render "shared/navbar" %>
-      <% if controller.action_name == "show" && controller_name = "teams" %>
-        <%= render "teams/sidebar" %>
-      <% else %>
-        <% # render "shared/sidebar" %>
+      <% if current_user %>
+        <%= render "shared/navbar" %>
+        <% if controller.action_name == "show" && controller_name = "teams" %>
+          <%= render "teams/sidebar" %>
+        <% else %>
+          <%= render "shared/sidebar" %>
+        <% end %>
       <% end %>
     </header>
     <main>
