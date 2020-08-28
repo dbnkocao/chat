@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
 
-  devise_for :users, :controllers => { registration: "registration" }
+  devise_for :users, :controllers => { registrations: "registration" }
 
   resources :teams, except: [:show]
   get "/teams/:slug", to: "teams#show"
