@@ -12,6 +12,8 @@
         <div class="row">
           <div class="input-field col s12">
             <%= form_with(model: @message, remote: :true) do |message_form| %>
+              <%= hidden_field :talk, :team_id, value: @team.try(:id) %>
+              <%= hidden_field :talk, :user_two_id %>
               <%= message_form.hidden_field :messagable_id, value: @channel.try(:id) %>
               <%= message_form.hidden_field :messagable_type, value: @channel.try(:class) %>
               <i class="material-icons prefix">mode_edit</i>
