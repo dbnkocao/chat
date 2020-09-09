@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document
         .getElementById("message_messagable_type")
         .setAttribute("value", type);
+      window.cable_subscribe();
     });
   });
 });
