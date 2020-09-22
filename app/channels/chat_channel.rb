@@ -1,6 +1,10 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "chat_channel_#{params[:messagable_id]}"
+    if params[:messagable_type] == "Channel"
+      stream_from "chat_channel_#{params[:messagable_id]}"
+    else
+      stream_from "chat_channel_#{params[:team_id] + [params[:user_two_id], params[:current_user]].sort.join("")}"
+    end
   end
 
   def unsubscribed

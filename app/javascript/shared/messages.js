@@ -36,12 +36,15 @@ window.add_message = (message, message_date, name) => {
 window.open = async (id, type) => {
   clean_messages();
   const team_id = document.querySelector(".team_id").getAttribute("value");
+  let data;
 
   let url = `/${type}/${id}.json`;
   if (type == "talks") url = `/${type}/${id}/${team_id}.json`;
 
-  const response = await fetch(url);
-  const data = await response.json();
+  if (id != "") {
+    const response = await fetch(url);
+    data = await response.json();
+  }
 
   if (type == "talks") {
     const user_name = document.querySelector(`.users span[id='${id}']`)

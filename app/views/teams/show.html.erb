@@ -9,19 +9,20 @@
       </div>
     </div>
     <div class="row">
-        <div class="row">
-          <div class="input-field col s12">
-            <%= form_with(model: @message, remote: :true, id: "message_form") do |message_form| %>
-              <%= hidden_field :talk, :team_id, value: @team.try(:id) %>
-              <%= hidden_field :talk, :user_two_id %>
-              <%= message_form.hidden_field :messagable_id, value: @channel.try(:id) %>
-              <%= message_form.hidden_field :messagable_type, value: @channel.try(:class) %>
-              <i class="material-icons prefix">mode_edit</i>
-              <%= message_form.text_area :body, class: "materialize-textarea new_message" %>                
-              <label for="icon_prefix2">Send a Message...</label>
-            <% end %>
-          </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= hidden_field_tag :current_user, current_user.id %>
+          <%= form_with(model: @message, remote: :true, id: "message_form") do |message_form| %>
+            <%= hidden_field :talk, :team_id, value: @team.try(:id) %>
+            <%= hidden_field :talk, :user_two_id %>
+            <%= message_form.hidden_field :messagable_id, value: @channel.try(:id) %>
+            <%= message_form.hidden_field :messagable_type, value: @channel.try(:class) %>
+            <i class="material-icons prefix">mode_edit</i>
+            <%= message_form.text_area :body, class: "materialize-textarea new_message" %>
+            <label for="icon_prefix2">Send a Message...</label>
+          <% end %>
         </div>
+      </div>
     </div>
   </div>
 </div>
