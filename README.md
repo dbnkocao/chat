@@ -71,5 +71,5 @@ Tecnologias usadas nesse projeto.
 ## Links
   * Repository: (https://github.com/dbnkocao/chat)
 
-## Authors
+## Autores
 * **Daniel Nascimento**: @dbnkocao (https://github.com/dbnkocao)
