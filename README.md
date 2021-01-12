@@ -1,4 +1,4 @@
-![Logo of the project](https://github.com/dbnkocao/blob/master/public/readme_images/logo.png)
+![Logo of the project](https://github.com/dbnkocao/chat/blob/master/public/readme_images/logo.png)
 ## Chat
 
 Esse projeto foi produzido durante o bootcamp do [onebitcode](https://onebitcode.com/), é uma ferramenta para comunicação entre equipes, um clone do slack, porém mais simples.
