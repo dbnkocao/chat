@@ -40,25 +40,25 @@ Tecnologias usadas nesse projeto.
 
 ## Como Usar
 ### Entrando no sistema
-![login](https://raw.githubusercontent.com/dbnkocao/chat/master/public/readme_images/login.png)
+![login](https://github.com/dbnkocao/chat/blob/master/public/readme_images/login.png)
 
 ### Criando novo usuário
-![siign up](https://raw.githubusercontent.com/dbnkocao/chat/master/public/readme_images/signup.png)
+![siign up](https://github.com/dbnkocao/chat/blob/master/public/readme_images/signup.png)
 
 ### Criando um novo time
-![new team](https://raw.githubusercontent.com/dbnkocao/chat/master/public/readme_images/new_team.png)
+![new team](https://github.com/dbnkocao/chat/blob/master/public/readme_images/new_team.png)
 
 ### Criando um novo canal
-![new channel](https://raw.githubusercontent.com/dbnkocao/chat/master/public/readme_images/new_channel.png)
+![new channel](https://github.com/dbnkocao/chat/blob/master/public/readme_images/new_channel.png)
 
 ### Adicionando usuário ao time
-![adding user](https://raw.githubusercontent.com/dbnkocao/chat/master/public/readme_images/add_user.png)
+![adding user](https://github.com/dbnkocao/chat/blob/master/public/readme_images/add_user.png)
 
 ### Conversando através de canais
-![channel_conversation](https://raw.githubusercontent.com/dbnkocao/chat/master/public/readme_images/channel_conversation.png)
+![channel_conversation](https://github.com/dbnkocao/chat/blob/master/public/readme_images/channel_conversation.png)
 
 ### Conversando com um usuário específico
-![private_coversation](https://raw.githubusercontent.com/dbnkocao/chat/master/public/readme_images/private_conversation.png)
+![private_coversation](https://github.com/dbnkocao/chat/blob/master/public/readme_images/private_conversation.png)
 
 ## Funcionalidades
   - Possibilidade de criar inúmeros times.
