@@ -39,33 +39,34 @@ Tecnologias usadas nesse projeto.
   > docker-compose up -d
 
 ## Como Usar
-### Entrando no sistema
-![login](https://github.com/dbnkocao/chat/blob/master/public/readme_images/login.png)
-
-### Criando novo usuário
+### 1. Criando novo usuário
 ![siign up](https://github.com/dbnkocao/chat/blob/master/public/readme_images/signup.png)
 
-### Criando um novo time
+### 2. Entrando no sistema
+![login](https://github.com/dbnkocao/chat/blob/master/public/readme_images/login.png)
+
+
+### 3. Criando um novo time
 ![new team](https://github.com/dbnkocao/chat/blob/master/public/readme_images/new_team.png)
 
-### Criando um novo canal
+### 4. Criando um novo canal
 ![new channel](https://github.com/dbnkocao/chat/blob/master/public/readme_images/new_channel.png)
 
-### Adicionando usuário ao time
+### 5. Adicionando usuário ao time
 ![adding user](https://github.com/dbnkocao/chat/blob/master/public/readme_images/add_user.png)
 
-### Conversando através de canais
+### 6. Conversando através de canais
 ![channel_conversation](https://github.com/dbnkocao/chat/blob/master/public/readme_images/channel_conversation.png)
 
-### Conversando com um usuário específico
+### 7. Conversando com um usuário específico
 ![private_coversation](https://github.com/dbnkocao/chat/blob/master/public/readme_images/private_conversation.png)
 
 ## Funcionalidades
-  - Possibilidade de criar inúmeros times.
-  - Canais ilimitados para os times.
-  - Adicão de usuários a times.
-  - Conversas separadas por canais.
-  - Conversas privadas entre usuários.
+* Possibilidade de criar inúmeros times.
+* Canais ilimitados para os times.
+* Adicão de usuários a times.
+* Conversas separadas por canais.
+* Conversas privadas entre usuários.
 
 ## Links
   * Repository: (https://github.com/dbnkocao/chat)
